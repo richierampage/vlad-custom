@@ -1,0 +1,16 @@
+# OS generated files
+# =========================================
+.DS_Store*
+
+# IDE generated files
+# =========================================
+.idea
+
+# Role files that may be project specific
+# =========================================
+tasks/main.yml
+*/project/*
+
+# Keep examples in Git
+# =========================================
+!*/project/examples
