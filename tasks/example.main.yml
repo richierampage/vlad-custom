@@ -1,0 +1,9 @@
+---
+
+# To run just the 'custom' tag use:
+# $ ansible-playbook -i vlad/host.ini -t custom vlad/playbooks/site.yml
+
+- include: common/mkdirs.yml
+- include: common/ssh.yml
+- include: common/drush_aliases.yml
+- include: common/drush_bashrc.yml

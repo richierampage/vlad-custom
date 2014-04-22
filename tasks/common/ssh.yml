@@ -1,0 +1,11 @@
+---
+# http://stackoverflow.com/q/10767488
+- name: Custom | Generate SSH key
+  command: ssh-keygen -f .ssh/id_rsa -t rsa -N '' creates=/home/vagrant/.ssh/id_rsa
+  tags: custom
+
+# http://stackoverflow.com/a/17848593
+# @TODO Check if it's OK to repeatedly re-run this command.
+- name: Custom | Add generated SSH key to ssh-agent
+  shell: eval `ssh-agent -s`; ssh-add /home/vagrant/.ssh/id_rsa
+  tags: custom
