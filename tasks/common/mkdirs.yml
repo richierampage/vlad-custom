@@ -7,7 +7,7 @@
   tags: custom
   sudo: true
 
-- name: Custom | Create private files directory (above docroot)
-  file: path=/var/www/site/private state=directory owner=vagrant group=www-data mode=770
+- name: Custom | Create aux/private files directory if it doesn't exist
+  file: path=/var/www/site/aux/private state=directory owner=vagrant group=www-data mode=770
   tags: custom
   sudo: true
