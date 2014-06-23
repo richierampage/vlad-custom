@@ -1,4 +1,0 @@
----
-- name: Custom | Pass SSH key from host to guest
-  local_action: command ssh-add
-  tags: custom
