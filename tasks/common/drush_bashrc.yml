@@ -9,10 +9,18 @@
 # if [ -f ~/.drush_bashrc ] ; then
 #   . ~/.drush_bashrc
 # fi
+#
+# Answer: (indicate new lines with "\n" )
+#
+# line='if [ -f ~/.drush_bashrc ] ; then\n  . ~/.drush_bashrc\nfi'
+#
+# This will only work in Ansible 1.6.4+ (Homebrew still listing 1.6.3 as lastest stable)
+
 - name: Custom | Source .drush_bashrc from .bash_profile
   lineinfile:
     dest=/home/{{ user }}/.bashrc
     state=present
     line='. ~/.drush_bashrc'
+    # line='if [ -f ~/.drush_bashrc ] ; then\n  . ~/.drush_bashrc\nfi'
   tags: custom
   when: php_install is defined and php_install == "y"
