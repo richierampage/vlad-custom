@@ -9,6 +9,6 @@ This codebase needs to be located at the following path relative to [Vlad](https
 ```
 See Vlad's docs on the [custom role](https://bitbucket.org/philipnorton42/vlad/src/1c2e2048c0e849ab431f747054fdade31bd302db/vlad/docs/custom_role.md?at=dev) for full details.
 
-## Example files
+## Settings
 
-Example files have been included where you would normally want to use project specific code. These can be copied to where they would normally reside and modified to suit.
+Copy & rename ```vlad-custom-settings.example.yml``` to ```../settings/vlad-custom-settings.yml``` (and edit to suit).

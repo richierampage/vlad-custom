@@ -1,0 +1,21 @@
+---
+
+# A local alias "vm" is automatically created.
+
+drush_aliases:
+    - { alias: 'dev',
+        root: '/path/to/root',
+        uri: 'dev.example.com',
+        remote_host: '12.345.67.890',
+        remote_user: 'example',
+        path_aliases_drush: '/usr/bin/drush',
+        path_aliases_dump_dir: '/path/to/drush-dumps'
+        }
+    - { alias: 'prod',
+        root: '/path/to/root',
+        uri: 'www.example.com',
+        remote_host: '12.345.67.890',
+        remote_user: 'example',
+        path_aliases_drush: '/usr/bin/drush',
+        path_aliases_dump_dir: '/path/to/drush-dumps'
+        }

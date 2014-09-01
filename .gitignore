@@ -1,3 +1,2 @@
 .DS_Store*
 .idea
-templates/drush.aliases.drushrc.j2

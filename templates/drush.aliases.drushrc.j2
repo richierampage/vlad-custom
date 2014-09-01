@@ -9,56 +9,38 @@ $aliases['vm'] = array(
   ),
 );
 
-# @{{ boxname }}.dev
-$aliases['dev'] = array(
-  'root' => '/home/dev/www',
-  'uri' => 'eti.db-dev.co.uk',
-  'remote-host' => '37.139.18.121',
-  'remote-user' => 'dev',
-  'path-aliases' => array(
-    '%drush' => '/usr/bin/drush',
-    '%dump-dir' => '/home/dev/drush-dumps',
-  ),
-  'command-specific' => array(
-    'rsync' => array (
-      'mode' => 'adivvz',
-      'exclude-paths' => 'css:ctools:js:styles:xmlsitemap:.DS_Store:.htaccess:tmp',
-    ),
-  ),
-);
+{% for item in drush_aliases %}
+# @{{ boxname }}.{{ item.alias }}
+    $aliases['{{ item.alias }}'] = array(
+      {% if item.root is defined %}
+        'root' => '{{ item.root }}',
+      {% endif %}
+      {% if item.uri is defined %}
+        'uri' => '{{ item.uri }}',
+      {% endif %}
+      {% if item.remote_host is defined %}
+        'remote-host' => '{{ item.remote_host }}',
+      {% endif %}
+      {% if item.remote_user is defined %}
+      'remote-user' => '{{ item.remote_user }}',
+      {% endif %}
+      {# TODO: The 'if' statement below could be better - revise. #}
+      {% if item.path_aliases_dump_dir is defined %}
+      'path-aliases' => array(
+        {% if item.path_aliases_drush is defined %}
+        '%drush' => '{{ item.path_aliases_drush }}',
+        {% endif %}
+        {% if item.path_aliases_dump_dir is defined %}
+        '%dump-dir' => '{{ item.path_aliases_dump_dir }}',
+        {% endif %}
+      ),
+      {% endif %}
+      'command-specific' => array(
+        'rsync' => array (
+          'mode' => 'adivvz',
+          'exclude-paths' => 'css:ctools:js:styles:xmlsitemap:.DS_Store:.htaccess:tmp',
+        ),
+      ),
+    );
 
-# @{{ boxname }}.exp
-$aliases['exp'] = array(
-  'root' => '/home/dev/www',
-  'uri' => 'eti-x.db-dev.co.uk',
-  'remote-host' => '146.185.179.8',
-  'remote-user' => 'dev',
-  'path-aliases' => array(
-    '%drush' => '/usr/bin/drush',
-    '%dump-dir' => '/home/dev/drush-dumps',
-  ),
-  'command-specific' => array(
-    'rsync' => array (
-      'mode' => 'adivvz',
-      'exclude-paths' => 'css:ctools:js:styles:xmlsitemap:.DS_Store:.htaccess:tmp',
-    ),
-  ),
-);
-
-# @{{ boxname }}.prod
-$aliases['prod'] = array(
-  'root' => '/home/ethicalt/public_html',
-  'uri' => 'ethicaltrade.org',
-  'remote-host' => '195.62.29.164',
-  'remote-user' => 'ethicalt',
-  'path-aliases' => array(
-    '%drush' => '/usr/bin/drush',
-    '%dump-dir' => '/home/ethicalt/drush-dumps',
-  ),
-  'command-specific' => array(
-    'rsync' => array (
-      'mode' => 'adivvz',
-      'exclude-paths' => 'css:ctools:js:styles:xmlsitemap:.DS_Store:.htaccess:tmp',
-    ),
-  ),
-);
+{% endfor %}
