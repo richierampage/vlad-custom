@@ -2,12 +2,12 @@
 
 ## Adding to Vlad
 
-This codebase needs to located at the following path within [Vlad](https://bitbucket.org/philipnorton42/vlad):
+This codebase needs to be located at the following path relative to [Vlad](https://bitbucket.org/philipnorton42/vlad):
 
 ```
-vlad/playbooks-custom/custom
+../vlad-custom
 ```
-Note the ```custom``` directory at the end of that path; you'll need to create this as it's not already present in Vlad.
+See Vlad's docs on the [custom role](https://bitbucket.org/philipnorton42/vlad/src/1c2e2048c0e849ab431f747054fdade31bd302db/vlad/docs/custom_role.md?at=dev) for full details.
 
 ## Including playbooks
 
