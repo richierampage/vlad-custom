@@ -1,7 +1,6 @@
 ---
 - name: Custom | Create .drush_bashrc file
   command: cp /home/{{ user }}/drush-master/examples/example.bashrc /home/{{ user }}/.drush_bashrc creates=/home/{{ user }}/.drush_bashrc
-  tags: custom
   when: php_install is defined and php_install == "y"
 
 # @TODO work out how to *sensibly* add multiple lines so that we can do:
@@ -22,5 +21,4 @@
     state=present
     line='. ~/.drush_bashrc'
     # line='if [ -f ~/.drush_bashrc ] ; then\n  . ~/.drush_bashrc\nfi'
-  tags: custom
   when: php_install is defined and php_install == "y"

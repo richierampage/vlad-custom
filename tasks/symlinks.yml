@@ -1,0 +1,3 @@
+---
+- name: Custom | symlink site directory from home directory
+  file: src=/var/www/site dest=/home/{{ user }}/site state=link

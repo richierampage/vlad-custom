@@ -2,4 +2,3 @@
 - name: Custom | Create Drush aliases file
   template: src=../../templates/project/drush.aliases.drushrc.j2 dest=/home/vagrant/.drush/{{ boxname }}.aliases.drushrc.php
   when: php_install is defined and php_install == "y"
-  tags: custom
