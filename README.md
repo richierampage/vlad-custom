@@ -2,7 +2,7 @@
 
 ## Adding to Vlad
 
-This codebase needs to located at the following path relative to [Vlad](https://bitbucket.org/philipnorton42/vlad):
+This codebase needs to be located at the following path relative to [Vlad](https://bitbucket.org/philipnorton42/vlad):
 
 ```
 ../vlad-custom
