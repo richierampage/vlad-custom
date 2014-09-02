@@ -11,4 +11,4 @@ See Vlad's docs on the [custom role](https://bitbucket.org/philipnorton42/vlad/s
 
 ## Settings
 
-Copy & rename ```vlad-custom-settings.example.yml``` to ```../settings/vlad-custom-settings.yml``` and edit to suit.
+Copy & rename ```vars/main.yml``` to ```../settings/vlad-custom-settings.yml``` and edit to suit.
