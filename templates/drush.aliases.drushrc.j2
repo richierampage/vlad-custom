@@ -8,33 +8,32 @@ $aliases['vm'] = array(
     '%dump-dir' => '/var/www/site/drush-dumps',
   ),
 );
-
 {% for item in drush_aliases %}
+
 # @{{ boxname }}.{{ item.alias }}
 $aliases['{{ item.alias }}'] = array(
-  {% if item.root is defined %}
+{% if item.root is defined %}
   'root' => '{{ item.root }}',
-  {% endif %}
-  {% if item.uri is defined %}
+{% endif %}
+{% if item.uri is defined %}
   'uri' => '{{ item.uri }}',
-  {% endif %}
-  {% if item.remote_host is defined %}
+{% endif %}
+{% if item.remote_host is defined %}
   'remote-host' => '{{ item.remote_host }}',
-  {% endif %}
-  {% if item.remote_user is defined %}
+{% endif %}
+{% if item.remote_user is defined %}
   'remote-user' => '{{ item.remote_user }}',
-  {% endif %}
-  {# TODO: The 'if' statement below could be better - revise. #}
-  {% if item.path_aliases_dump_dir is defined %}
+{% endif %}
+{% if item.path_aliases is defined %}
   'path-aliases' => array(
-    {% if item.path_aliases_drush is defined %}
-    '%drush' => '{{ item.path_aliases_drush }}',
-    {% endif %}
-    {% if item.path_aliases_dump_dir is defined %}
-    '%dump-dir' => '{{ item.path_aliases_dump_dir }}',
-    {% endif %}
+{% if item.path_aliases.drush is defined %}
+    '%drush' => '{{ item.path_aliases.drush }}',
+{% endif %}
+{% if item.path_aliases.dump_dir is defined %}
+    '%dump-dir' => '{{ item.path_aliases.dump_dir }}',
+{% endif %}
   ),
-  {% endif %}
+{% endif %}
   'command-specific' => array(
     'rsync' => array (
       'mode' => 'adivvz',
@@ -42,5 +41,4 @@ $aliases['{{ item.alias }}'] = array(
     ),
   ),
 );
-
 {% endfor %}
