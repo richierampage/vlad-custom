@@ -1,9 +1,9 @@
 ---
-- name: Custom | Create .drush_bashrc file
+- name: Create .drush_bashrc file
   command: cp /home/{{ user }}/drush-master/examples/example.bashrc /home/{{ user }}/.drush_bashrc creates=/home/{{ user }}/.drush_bashrc
   when: php_install is defined and php_install == "y"
 
-- name: Custom | Source .drush_bashrc from .bash_profile
+- name: Source .drush_bashrc from .bash_profile
   lineinfile:
     dest=/home/{{ user }}/.bashrc
     state=present
