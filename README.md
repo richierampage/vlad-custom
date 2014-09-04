@@ -1,4 +1,4 @@
-# Custom playbooks for Vlad
+# Custom role for Vlad
 
 ## Adding to Vlad
 
@@ -11,4 +11,10 @@ See Vlad's docs on the [custom role](https://bitbucket.org/philipnorton42/vlad/s
 
 ## Settings
 
+### Option 1
+
 Copy & rename ```vars/main.yml``` to ```../settings/vlad-custom-settings.yml``` and edit to suit.
+
+### Option 2
+
+Just edit vars/main.yml as required (note that this will get overwritten if you ```git pull``` in future).
