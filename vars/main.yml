@@ -6,6 +6,8 @@
 # Either specify alias settings as a list within the variable
 # (a local alias "vm" is automatically created for you).
 #
+# Note the underscores (Ansible doesn't like variables names with hyphens).
+#
 # For example:
 #
 drush_aliases:
