@@ -1,0 +1,5 @@
+---
+
+# Drush
+- name: drush cc drush
+  command: drush cc drush
