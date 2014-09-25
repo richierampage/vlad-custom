@@ -6,11 +6,12 @@
   when: php_install is defined and php_install == "y"
   tags: drush_aliases
 
-# Copy/rename any custom remote site aliases from ../../settings/drush_aliases/
-# TODO: Add validation here - file extension, number of files, check for duplication of local alias name etc
+# TODO: Add further validation - number of files, check for duplication of local alias name etc
+
+# Copy/rename any custom remote site aliases from ../../settings/
 - copy: src={{ item }} dest=/home/vagrant/.drush/{{ boxname }}.aliases.drushrc.php
   with_fileglob:
-    - ../../settings/drush_aliases/*
+    - ../../settings/*.aliases.drushrc.php
   notify: drush cc drush
   when: php_install is defined and php_install == "y"
   tags: drush_aliases

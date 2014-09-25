@@ -2,16 +2,16 @@
 
 ## Adding to Vlad
 
-This codebase needs to be located at the following path relative to [Vlad](https://bitbucket.org/philipnorton42/vlad):
+This codebase needs to be located at the following path relative to [Vlad](https://github.com/hashbangcode/vlad):
 
 ```
 ../vlad-custom
 ```
-See Vlad's docs on the [custom role](https://bitbucket.org/philipnorton42/vlad/src/1c2e2048c0e849ab431f747054fdade31bd302db/vlad/docs/custom_role.md?at=dev) for full details.
+See Vlad's docs on the [custom role](https://github.com/hashbangcode/vlad/blob/dev/vlad/docs/custom_role.md) for full details.
 
 ## Settings
 
-### Option 1
+### Option 1 (best)
 
 Copy & rename ```vars/main.yml``` to ```../settings/vlad-custom-settings.yml``` and edit to suit.
 
@@ -21,4 +21,6 @@ Just edit vars/main.yml as required (note that this will get overwritten if you 
 
 ## Drush site aliases
 
-A local Drush alias will be automatically created for you. Further remote aliases can be added by placing a ```[whatever].aliases.drushrc.php``` file in ```../settings/drush_aliases/```. These will automatically be added to the VM.
+A local Drush alias will be automatically created for you.
+
+Further remote aliases can be added by placing a *single* ```[whatever].aliases.drushrc.php``` file in ```../settings```. These will automatically be added to the VM when provisioned.
