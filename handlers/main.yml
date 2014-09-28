@@ -1,5 +1,9 @@
 ---
 
 # Drush
+
 - name: drush cc drush
   command: drush cc drush
+
+- name: drush cc all
+  shell: cd /var/www/site/docroot/ && drush cc all

@@ -1,0 +1,15 @@
+---
+
+- name: Disable certain projects
+  shell: cd /var/www/site/docroot/ && drush dis {{ item }} -y
+  with_items: project_disable
+  notify: drush cc all
+  ignore_errors: yes
+  when: project_disable is defined
+
+- name: Enable certain projects
+  shell: cd /var/www/site/docroot/ && drush en {{ item }} -y
+  with_items: project_enable
+  notify: drush cc all
+  ignore_errors: yes
+  when: project_enable is defined

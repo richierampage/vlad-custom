@@ -4,3 +4,17 @@
 # -------------
 
 local_alias_name: "vm"
+
+
+# Disable / enable projects
+# -------------------------
+
+# Commented out to act as an exmaple rather than a default.
+
+# project_disable:
+#   - shield
+#   - toolbar
+
+# project_enable:
+#   - admin_menu
+#   - admin_menu_toolbar
