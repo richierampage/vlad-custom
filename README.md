@@ -1,5 +1,9 @@
 # Custom role for Vlad
 
+## HEADS UP!
+
+This project will soon be moving to GitHub. Details to be posted here when the move is complete. I'll sync both repos for a short time after the migration to help ease the move ;)
+
 ## Adding to Vlad
 
 This codebase needs to be located at the following path relative to [Vlad](https://github.com/hashbangcode/vlad):
