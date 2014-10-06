@@ -7,3 +7,4 @@
 - include: drush_aliases.yml
 - include: drush_bashrc.yml
 - include: project_state.yml
+- include: aberdeen.yml

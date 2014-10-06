@@ -18,3 +18,10 @@ local_alias_name: "vm"
 # project_enable:
 #   - admin_menu
 #   - admin_menu_toolbar
+
+
+# AberdeenCloud
+# -------------
+
+# Install AberdeenCLoud Command Line Tools
+aberdeen_cli: false
