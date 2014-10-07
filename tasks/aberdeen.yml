@@ -3,7 +3,11 @@
 # http://www.aberdeencloud.com/docs/guides/command-line-tools
 
 - name: Install AberdeenCloud Command Line Tools
-  command: curl -O https://aberdeen.s3.amazonaws.com/toolkit/latest/aberdeen && chmod +x aberdeen
+  command: curl -O https://aberdeen.s3.amazonaws.com/toolkit/latest/aberdeen
+  when: aberdeen_cli is defined and aberdeen_cli
+
+- name: Install AberdeenCloud Command Line Tools
+  file: path=aberdeen mode=764
   when: aberdeen_cli is defined and aberdeen_cli
 
 - name: Make AberdeenCloud Command Line Tools available system-wide
