@@ -9,7 +9,7 @@ local_alias_name: "vm"
 # Disable / enable projects
 # -------------------------
 
-# Commented out to act as an exmaple rather than a default.
+# Commented out to act as an example rather than a default.
 
 # project_disable:
 #   - shield
@@ -18,3 +18,12 @@ local_alias_name: "vm"
 # project_enable:
 #   - admin_menu
 #   - admin_menu_toolbar
+
+# Install Drupal
+# --------------
+
+# Install Drupal
+install_drupal: false
+
+# Drupal version: 7 or 8
+drupal_version: 7

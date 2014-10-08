@@ -1,0 +1,6 @@
+---
+
+- name: "Install Drupal {{ drupal_version }}"
+  shell: /var/www/drupal{{ drupal_version }}_install.sh
+  when: drupal_version is defined and drupal_version >= 7 and drupal_version <= 8 and install_drupal
+  tags: install_drupal
