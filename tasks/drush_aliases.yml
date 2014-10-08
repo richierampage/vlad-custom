@@ -1,15 +1,16 @@
 ---
 
-# Create local drush site alias file
-- template: src=vm.alias.drushrc.php.j2 dest=/home/vagrant/.drush/{{ boxname }}.{{ local_alias_name }}.alias.drushrc.php
+- name: Create local Drush site alias file ({{ local_alias_name }})
+  template: src=vm.alias.drushrc.php.j2 dest=/home/vagrant/.drush/{{ boxname }}.{{ local_alias_name }}.alias.drushrc.php
   notify: drush cc drush
   when: php_install is defined and php_install == "y"
   tags: drush_aliases
 
-# TODO: Add further validation - number of files, check for duplication of local alias name etc
+# @TODO: Add further validation - number of files, check for duplication of local alias name etc
+# @TODO: Do I really want to rename the aliases file?
 
-# Copy/rename any custom remote site aliases from ../../settings/
-- copy: src={{ item }} dest=/home/vagrant/.drush/{{ boxname }}.aliases.drushrc.php
+- name: Copy/rename any custom remote site aliases from settings directory
+  copy: src={{ item }} dest=/home/vagrant/.drush/{{ boxname }}.aliases.drushrc.php
   with_fileglob:
     - ../../settings/*.aliases.drushrc.php
   notify: drush cc drush
