@@ -3,6 +3,7 @@
   command: cp /home/{{ user }}/drush-master/examples/example.bashrc /home/{{ user }}/.drush_bashrc creates=/home/{{ user }}/.drush_bashrc
   when: php_install is defined and php_install == "y"
 
+# @TODO: Make idempotent
 - name: Source .drush_bashrc from .bash_profile
   lineinfile:
     dest=/home/{{ user }}/.bashrc
