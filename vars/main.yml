@@ -22,7 +22,7 @@ local_alias_name: "vm"
 # AberdeenCloud
 # -------------
 
-# Install AberdeenCLoud Command Line Tools
+# Install AberdeenCloud Command Line Tools
 aberdeen_cli: false
 
 # Install Drupal
