@@ -27,3 +27,9 @@ install_drupal: false
 
 # Drupal version: 7 or 8
 drupal_version: 7
+
+# Site name
+site_name: "Default Drupal Site"
+
+# Use custom settings from playbook rather than Drupal's default settings.php
+use_custom_settings: true

@@ -1,0 +1,27 @@
+<?php
+
+# Add sensitive and/or environment specific settings below.
+# This file *will not* be included in version control.
+
+# Database
+$databases['default']['default'] = array(
+ 	'database' => '{{ dbname }}',
+ 	'username' => '{{ dbuser }}',
+ 	'password' => '{{ dbpass }}',
+ 	'driver' => 'mysql',
+ 	'host' => 'localhost',
+ 	'port' => '{{ mysql_port }}',
+ );
+
+# Site name
+$conf['site_name'] = '{{ site_name }} [VM]';
+
+# Performance
+$conf['preprocess_css'] = '0';
+$conf['preprocess_js'] = '0';
+$conf['cache'] = '0';
+$conf['page_compression'] = '0';
+$conf['block_cache'] = '0';
+
+# File system
+$conf['file_private_path'] = '../vlad_aux/private';

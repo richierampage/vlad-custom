@@ -1,0 +1,26 @@
+---
+
+- name: Change permissions of settings.php
+  file: path=/var/www/site/docroot/sites/default/settings.php mode=777
+  sudo: true
+  when: use_custom_settings and drupal_version == 7
+
+- name: Change ownership of settings.php
+  file: path=/var/www/site/docroot/sites/default/settings.php owner={{ user }}
+  sudo: true
+  when: use_custom_settings and drupal_version == 7
+
+- name: Delete default settings.php
+  file: path=/var/www/site/docroot/sites/default/settings.php state=absent
+  #sudo: true
+  when: use_custom_settings and drupal_version == 7
+
+- name: Create settings.php from template if it doesn't exist (D7 only)
+  template: src=settings.php.j2 dest=/var/www/site/docroot/sites/default/settings.php
+  #sudo: true
+  when: use_custom_settings and drupal_version == 7
+
+- name: Create settings_unique.inc from template if it doesn't exist (D7 only)
+  template: src=settings_unique.inc.j2 dest=/var/www/site/docroot/sites/default/settings_unique.inc
+  #sudo: true
+  when: use_custom_settings and drupal_version == 7
