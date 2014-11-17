@@ -1,5 +1,5 @@
 ---
 
 - name: Set default admin theme
-  command: drush vset {{ admin_theme }}
+  shell: cd /var/www/site/docroot/ && drush vset {{ admin_theme }}
   when: admin_theme is defined
