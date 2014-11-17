@@ -8,4 +8,5 @@
 - include: drush_bashrc.yml
 - include: install_drupal.yml
 - include: project_state.yml
+- include: admin.yml
 - include: aberdeen.yml
