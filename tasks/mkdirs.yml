@@ -1,9 +1,9 @@
 ---
 # Create directories outside of docroot/
 
-- name: Create drush-dumps directory (above docroot)
-  file: path=/var/www/site/drush-dumps state=directory owner=vagrant group=www-data mode=770
+- name: Ensure vlad_aux/db_io/drush-dumps/ exists
+  file: path=/var/www/site/vlad_aux/db_io/drush-dumps state=directory owner=vagrant group=www-data mode=770
   sudo: true
 
-- name: Create vlad_aux/private files directory if it doesn't exist
+- name: Ensure vlad_aux/private/ exists
   file: path=/var/www/site/vlad_aux/private state=directory
