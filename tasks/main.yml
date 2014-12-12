@@ -6,6 +6,7 @@
 - include: symlinks.yml
 - include: drush_aliases.yml
 - include: drush_bashrc.yml
+- include: drush_extensions.yml
 - include: install_drupal.yml
 - include: project_state.yml
 - include: admin.yml

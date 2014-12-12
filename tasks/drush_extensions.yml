@@ -1,0 +1,4 @@
+---
+
+- name: Download the drupalgeddon drush extension
+  command: drush dl drupalgeddon --yes chdir=/home/{{ user }}/.drush creates=/home/{{ user }}/.drush/drupalgeddon
