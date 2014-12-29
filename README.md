@@ -1,5 +1,13 @@
 # Custom role for Vlad
 
+## Running just this role
+
+Command to just run this role:
+
+```
+# $ ansible-playbook -i vlad/host.ini vlad/playbooks/site_custom.yml
+```
+
 ## Adding to Vlad
 
 This codebase needs to be located at the following path relative to [Vlad](https://github.com/hashbangcode/vlad):
