@@ -29,10 +29,10 @@ local_alias_name: "vm"
 # --------------
 
 # Install Drupal
-install_drupal: false
+# install_drupal: false
 
 # Drupal version: 7 or 8
-drupal_version: 7
+# drupal_version: 7
 
 
 # Admin
