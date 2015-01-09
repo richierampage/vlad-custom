@@ -3,7 +3,7 @@
 - name: Create local Drush site alias file ({{ local_alias_name }})
   template: src=vm.alias.drushrc.php.j2 dest=/home/vagrant/.drush/{{ boxname }}.{{ local_alias_name }}.alias.drushrc.php
   notify: drush cc drush
-  when: php_install is defined and php_install == "y"
+  when: php_install
   tags: drush_aliases
 
 # @TODO: Add further validation - number of files, check for duplication of local alias name etc
@@ -14,5 +14,5 @@
   with_fileglob:
     - ../../settings/*.aliases.drushrc.php
   notify: drush cc drush
-  when: php_install is defined and php_install == "y"
+  when: php_install
   tags: drush_aliases

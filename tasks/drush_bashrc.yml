@@ -1,7 +1,7 @@
 ---
 - name: Create .drush_bashrc file
   command: cp /home/{{ user }}/drush-master/examples/example.bashrc /home/{{ user }}/.drush_bashrc creates=/home/{{ user }}/.drush_bashrc
-  when: php_install is defined and php_install == "y"
+  when: php_install
 
 # @TODO: Make idempotent
 - name: Source .drush_bashrc from .bash_profile
@@ -9,4 +9,4 @@
     dest=/home/{{ user }}/.bashrc
     state=present
     line='if [ -f ~/.drush_bashrc ] ; then\n  . ~/.drush_bashrc\nfi'
-  when: php_install is defined and php_install == "y"
+  when: php_install
